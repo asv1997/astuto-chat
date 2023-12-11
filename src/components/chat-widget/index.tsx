@@ -1,4 +1,4 @@
-import React, {useCallback, useState} from "react";
+import React, {useCallback, useEffect, useRef, useState} from "react";
 import styled from "styled-components"
 import Card from "../design-system/Card";
 import ImgTitleHeader from "../design-system/ImgTitleHeader";
@@ -74,8 +74,16 @@ const renderAnswer = (answer:AdditionalContent<AnswerType>) => {
 const ChatWidget = () => {
 
     const [chatData, setChatData] = useState<ChatDataType[]>([]);
+    const chatContainerRef = useRef<HTMLDivElement>(null);
 
     const [inputValue, setInputValue] = useState<string>('');
+
+    // to make the container scroll to the bottom whenever there is a new chat
+    useEffect(() => {
+        if(chatData.length && chatContainerRef.current){
+            chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
+        }
+    },[chatData])
 
     const onInputQueryChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
         setInputValue(event.target.value);
@@ -91,7 +99,7 @@ const ChatWidget = () => {
 
     return (
         <ChatWidgetWrapper>
-            <ChatContainer>
+            <ChatContainer ref={chatContainerRef}>
                 {
                     chatData.map((chat) => {
                         return (

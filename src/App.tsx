@@ -11,6 +11,21 @@ const AppWrapper = styled.div`
   }
 `
 
+/*
+
+Readme!!
+
+1. Every component in this project is strictly typed
+2. Basic functionality is that when you enter a prompt, an answer of a random type will be picked and displayed
+3. There are 3 types of answer types
+    a) Card Based description
+    b) Coding Snippet
+    c) Image based Answer
+4. No external css library used, styled-components library was used to write css in js
+
+
+ */
+
 
 function App() {
    return (
