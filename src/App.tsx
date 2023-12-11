@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from "styled-components"
 import ChatWidget from "./components/chat-widget";
-import {ChatDataType} from "./types/chatData";
+
 
 const AppWrapper = styled.div`
   width: 100vw;
@@ -22,7 +22,8 @@ Readme!!
     b) Coding Snippet
     c) Image based Answer
 4. No external css library used, styled-components library was used to write css in js
-
+5. Built a basic design system where basic components like Text, card and Html renderer are there
+6. Build a dynamic html renderer to render the html snippets, so that styles like bold, link can be visualised
 
  */
 

@@ -18,7 +18,7 @@ export const INITIAL_CHAT_DATA : ChatDataType[] = [
                         },
                         {
                             header : "Budget xyz logs 123 account",
-                            description : `<p>This bucket doesnt use <strong>25%</strong> of the data</p>`
+                            description : `<p>This bucket doesnt use <strong>25%</strong> of the data <a href="#">Click here</a></p>`
                         }
                     ]
                 }
